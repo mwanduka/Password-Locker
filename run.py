@@ -1,34 +1,41 @@
 from credential import credential
-def create_credential(fname,lname,email,password):
+def create_credentials(fname,lname,email,password):
     '''
     Function to create a new credential
     '''
     new_credential =  credential(fname,lname,email,password)
-    return new_credential
+    return new_credentials
 
-def save_credentials(credential):
+def save_credentials(user):
     '''
     Function to save credential
     '''
     credential.save_credential()
 
-def del_credential(credential):
+def save_credentials_multiple(user):
+    '''
+    Function to save credential
+    '''
+    credential.save_credentials_multiple()
+
+
+def del_credentials(user):
     '''
     Function to delete a credential
     '''
     credential.delete_credential()
 
-def find_credential(number):
+def find_credentials(email):
     '''
     Function that finds a credential by the number and returns the credential
     '''
-    return credential.find_by_number(number)
+    return credential.find_by_number(email)
 
-def check_existing_credentials(number):
+def check_existing_credentials(email):
     '''
     Function that check if a credential exists with that number and return a Boolean
     '''
-    return credential.credential_exist(number)
+    return credential.credentials_exist(email)
 
 def display_credentials():
     '''
@@ -40,7 +47,7 @@ def main():
     print("Hello Welcome to your credential list. What is your name?")
     user_name = input()
 
-    print(f'Hello {user_name}. What would you like to do?')
+    print(f'Hello {user_account}. What would you like to do?')
     print('\n')
     while True:
             print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, ex -exit the credential list")

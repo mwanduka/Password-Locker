@@ -126,24 +126,24 @@ class Testcredential(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_credential = credential("Mwanduka", "Stephen","facebook","mwandukastephen20@gmail.com") #create credential object
-    # def test_init(self):
-    #     '''
-    #     test_init test case to test if the object is initialized properly
-    #     '''
-    #
-    #     self.assertEqual(self.new_credential.first_name,"James")
-    #     self.assertEqual(self.new_credential.last_name,"Muriuki")
-    #     self.assertEqual(self.new_credential.password,"0712345678")
-    #     self.assertEqual(self.new_credential.email,"james@ms.com")
-    #
-    #
-    # def test_save_credential(self):
-    #     '''
-    #     test_save_credential test case to test if the credential object is saved into
-    #     the credential list
-    #     '''
-    #     self.new_credential.save_credential() # saving the new credential
-    #     self.assertEqual(len(credential.credential_list),1)
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_credential.first_name,"Mwanduka")
+        self.assertEqual(self.new_credential.last_name,"Stephen")
+        self.assertEqual(self.new_credential.last_name,"Facebook")
+        self.assertEqual(self.new_credential.email,"mwandukastephen20@gmail.com")
+
+
+    def test_save_credential(self):
+        '''
+        test_save_credential test case to test if the credential object is saved into
+        the credential list
+        '''
+        self.new_credential.save_credential() # saving the new credential
+        self.assertEqual(len(credential.credential_list),1)
 
 if __name__ ==  '__main__':
     unittest.main()
