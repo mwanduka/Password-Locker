@@ -52,7 +52,6 @@ def test_delete_credentials(self):
     '''
     test to see if credentials can be deleted.
     '''
-
     self.new_credentials.save_credential()
     test_credentials = Credentials('test.com', 'testaccount', 'testusername', 'testpassword')
     test_credentials.save_credentials()

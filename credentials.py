@@ -21,7 +21,6 @@ class Credentials:
         '''
         This methods save credential objects into the credentials_list.
         '''
-
         Credentials.credentials_list.append(self)
 
     def delete_credentials(self):
