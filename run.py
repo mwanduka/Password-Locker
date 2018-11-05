@@ -27,25 +27,25 @@ def save_user(user):
     '''
     This function saves an account.
     '''
-    user.save_user()
+    User.save_user(user)
 
-def delete_user(user):
+def delete_user(self):
     '''
     This function deletes an account.
     '''
     user.delete_user()
 
-def find_user(email):
+def find_user(email_address):
     '''
     This function finds a user by their email address.
     '''
-    return User.find_by_email(email)
+    return User.find_by_email(email_address)
 
-def check_existing_user(email):
+def check_existing_user(email_address):
     '''
     This function checks if a user exists with that email and returns a Boolean.
     '''
-    return User.user_exist(email)
+    return User.user_exist(email_address)
 
 def display_users():
     '''
@@ -57,7 +57,7 @@ def user_exists(email):
     '''
     This functions is to check if a user exists.
     '''
-    return User.check_existing_user(email)
+    return User.check_existing_user(email_address)
 
 def main():
     print("Hello, welcome to your user data list. What is your name?")
@@ -65,7 +65,7 @@ def main():
     user_name = input()
     print("")
 
-    print("Hello {user_name}. What would you like to do?")
+    print(f"Hello {user_name}. What would you like to do?")
     print("\n")
 
     while True:
@@ -92,7 +92,7 @@ def main():
 
             save_user(create_user)
             print('\n')
-            print("New User {f_name} {l_name} created")
+            print(f"New User {f_name} {l_name} created")
             print('\n')
 
         elif short_code == 'ld':
@@ -102,7 +102,7 @@ def main():
                 print('\n')
 
                 for user in display_user():
-                    print("{user.first_name} {user.last_name} .....{user.username}")
+                    print(f"{user.first_name} {user.last_name} .....{user.username}")
 
                 print('\n')
             else:
@@ -115,8 +115,8 @@ def main():
             print("Enter the email you want to search for")
 
             search_email = input()
-            if check_existing_user(search_email):
-                search_user = find_user(search_email)
+            if check_existing_user(search_email_address):
+                search_user = find_user(search_email_address)
                 print("{search_user.first_name} {search_user.last_name}")
                 print('-' * 20)
 

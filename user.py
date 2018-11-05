@@ -44,7 +44,7 @@ class User:
                 return user
 
     @classmethod
-    def display_users(cls,email_address):
+    def display_user(cls,email_address):
         '''
         method that returns the user list
         '''
@@ -60,7 +60,7 @@ class User:
             Boolean: True or false depending if the user exists
         '''
         for user in cls.user_list:
-            if user.password == email_address:
+            if user.email_address == email_address:
                 return True
 
                 return False
